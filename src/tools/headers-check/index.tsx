@@ -1,5 +1,5 @@
 import { useState, useCallback } from 'react'
-import { ShieldCheck, Search, AlertCircle, CheckCircle, XCircle, AlertTriangle, Loader2, Info, ExternalLink } from 'lucide-react'
+import { ShieldCheck, Search, AlertCircle, CheckCircle, XCircle, AlertTriangle, Loader2, Info } from 'lucide-react'
 import { ToolLayout } from '@/components/tool/ToolLayout'
 import { useAppStore } from '@/store/app'
 import { meta } from './meta'
@@ -205,17 +205,8 @@ export default function HeadersCheck() {
 
           <div className="p-3 rounded-xl bg-bg-surface border border-border-base flex items-center justify-between">
             <span className="text-xs text-text-muted">
-              数据由 Mozilla Observatory 提供
+              数据来源: {result.source}
             </span>
-            <a
-              href={`https://observatory.mozilla.org/analyze/${new URL(result.url).hostname}`}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="text-xs text-accent hover:underline flex items-center gap-1"
-            >
-              查看完整报告
-              <ExternalLink className="w-3 h-3" />
-            </a>
           </div>
         </div>
       )}
